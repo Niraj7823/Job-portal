@@ -10,7 +10,7 @@ import profileRoutes from "./src/routes/profile.routes.js";
 import userRoutes from "./src/routes/user.routes.js";
 import adminRoutes from "./src/routes/admin.routes.js";
 import cors from "cors";
-import authRoutes from "./routes/authRoutes.js";
+// import authRoutes from "./routes/authRoutes.js";
 
 const app = express();
 
