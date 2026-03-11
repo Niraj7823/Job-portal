@@ -12,7 +12,7 @@ export default function AdminRecruiterJobsPage() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchJobs = async () => {
+    const Jobs = async () => {
       const token = localStorage.getItem("token");
       if (!token) {
         setError("Unauthorized");
@@ -22,12 +22,12 @@ export default function AdminRecruiterJobsPage() {
 
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/admin/jobs/recruiter/${id}`,
+          `https://job-portal-backend-4jvd.onrender.com/api/admin/jobs/recruiter/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
             },
-          }
+          },
         );
 
         const data = await res.json();
@@ -50,7 +50,7 @@ export default function AdminRecruiterJobsPage() {
   const deleteJob = async (jobId: string, jobTitle: string) => {
     if (
       !confirm(
-        `Are you sure you want to permanently delete the job "${jobTitle}"?`
+        `Are you sure you want to permanently delete the job "${jobTitle}"?`,
       )
     ) {
       return;
@@ -62,13 +62,13 @@ export default function AdminRecruiterJobsPage() {
     }
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/admin/jobs/${jobId}`,
+        `https://job-portal-backend-4jvd.onrender.com/api/admin/jobs/${jobId}`,
         {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
       if (!res.ok) {
         const data = await res.json();

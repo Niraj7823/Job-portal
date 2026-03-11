@@ -70,7 +70,7 @@ export default function UserDashboard() {
         setLoading(true);
 
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/jobs?page=${page}`,
+          `https://job-portal-backend-4jvd.onrender.com/api/jobs?page=${page}`,
         );
 
         if (!res.ok) {
@@ -106,7 +106,7 @@ export default function UserDashboard() {
 
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/user/applications`,
+          `https://job-portal-backend-4jvd.onrender.com/api/user/applications`,
           {
             // headers: {
             //   Authorization: `Bearer ${token}`,

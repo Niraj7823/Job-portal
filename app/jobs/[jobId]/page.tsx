@@ -28,7 +28,7 @@ export default function JobDetails({
     const loadJob = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/jobs/${jobId}`,
+          `https://job-portal-backend-4jvd.onrender.com/api/jobs/${jobId}`,
         );
 
         if (!res.ok) throw new Error("Failed to fetch job");
@@ -53,7 +53,7 @@ export default function JobDetails({
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/jobs/apply`,
+        `https://job-portal-backend-4jvd.onrender.com/api/jobs/apply`,
         {
           method: "POST",
           headers: {

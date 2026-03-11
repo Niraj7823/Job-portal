@@ -19,18 +19,17 @@ export default function AdminDashboard() {
       }
 
       try {
-        const res = await fetch(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/admin/recruiters`,
+        const res =
+          await (`https://job-portal-backend-4jvd.onrender.com/api/admin/recruiters`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
             },
-          }
-        );
+          });
 
         if (!res.ok) {
           const data = await res.json();
-          throw new Error(data?.error || "Failed to fetch recruiters");
+          throw new Error(data?.error || "Failed to  recruiters");
         }
 
         const data = await res.json();
@@ -48,7 +47,7 @@ export default function AdminDashboard() {
   const deleteRecruiter = async (id: string, name: string) => {
     if (
       !confirm(
-        `Are you sure you want to delete recruiter "${name}"?\nThis will also delete all their posted jobs.`
+        `Are you sure you want to delete recruiter "${name}"?\nThis will also delete all their posted jobs.`,
       )
     ) {
       return;
@@ -61,14 +60,14 @@ export default function AdminDashboard() {
     }
 
     try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/admin/recruiter/${id}`,
+      const res = await (
+        `https://job-portal-backend-4jvd.onrender.com/api/admin/recruiter/${id}`,
         {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
 
       if (!res.ok) {

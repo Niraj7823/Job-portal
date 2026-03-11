@@ -22,7 +22,7 @@ export default function ApplicantsPage({
 
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/recruiter/applications`,
+          `https://job-portal-backend-4jvd.onrender.com/api/recruiter/applications`,
           {
             method: "POST",
             headers: {
@@ -62,7 +62,7 @@ export default function ApplicantsPage({
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/recruiter/applications/status`,
+        `https://job-portal-backend-4jvd.onrender.com/api/recruiter/applications/status`,
         {
           method: "PATCH",
           headers: {

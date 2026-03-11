@@ -21,7 +21,7 @@ export default function EditRecruiterProfile() {
       if (!token) return;
 
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/profile/me`,
+        `https://job-portal-backend-4jvd.onrender.com/api/profile/me`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -58,7 +58,7 @@ export default function EditRecruiterProfile() {
     }
 
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/profile/update`,
+      `https://job-portal-backend-4jvd.onrender.com/api/profile/update`,
       {
         method: "PUT",
         headers: {

@@ -285,7 +285,7 @@ export default function RegisterPage() {
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/register`,
+        `https://job-portal-backend-4jvd.onrender.com/api/auth/register`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

@@ -15,7 +15,7 @@ export default function RecruiterDashboard() {
       if (!token) return;
 
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/recruiter/jobs`,
+        `https://job-portal-backend-4jvd.onrender.com/api/recruiter/jobs`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
